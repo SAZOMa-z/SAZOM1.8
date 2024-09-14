@@ -1,0 +1,12 @@
+telebot
+pytube
+rembg
+pillow
+gtts
+googletrans
+googlesearch-python
+moviepy
+speedtest-cli
+opencv-python
+qrcode
+numpy
