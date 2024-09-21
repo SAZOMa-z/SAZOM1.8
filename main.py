@@ -146,15 +146,11 @@ try:
             return True
         return False
 
-    def register_user(message,user_id):
+    def register_user(user_id):
         if not check_user_id(user_id):
             with open("users.txt", "a") as file:
                 file.write(f"{user_id}\n")
-                bot.send_message(ADMIN_ID,f"""🏆 New User 🏆
-🚩 Name: {message.from_user.first_name}
-🚩 ID: {message.from_user.id}
-🚩 User Name: {message.from_user.username}
-🚩 Status: True ✅""")
+                bot.send_message(ADMIN_ID,f"🏆 New User 🏆")
     @bot.message_handler(commands=["start"])
     def start(message):
         user_id = message.from_user.id
