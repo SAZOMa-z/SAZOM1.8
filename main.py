@@ -151,6 +151,11 @@ try:
             with open("users.txt", "a") as file:
                 file.write(f"{user_id}\n")
                 bot.send_message(ADMIN_ID,f"🏆 New User 🏆")
+    @bot.message_handler(commands=["id"])
+    def id(message):
+        bot.send_message(message.chat.id,f"`{message.from_user.id}`",parse_mode="MarkdownV2")
+        bot.send_message(message.chat.id,f"`{message.from_user.first_name}`",parse_mode="MarkdownV2")
+        bot.send_message(message.chat.id,f"`{message.from_user.username}`",parse_mode="MarkdownV2")
     @bot.message_handler(commands=["start"])
     def start(message):
         user_id = message.from_user.id
